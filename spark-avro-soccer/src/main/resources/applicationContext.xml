@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean name="splDataService" class="com.prabuddha.spl.service.SPLDataServiceImpl">
+		<property name="dataClient" ref="dataClient"></property>
+		<property name="avroFileWriter" ref="avroFileWriter"></property>
+		<!-- <constructor-arg index="0" ref="customerRepository"/>  --> <!-- Constructor Injection -->
+	</bean>
+	
+	<bean name="dataClient" class="com.prabuddha.spl.xmlsoccer.client.XMLSoccerSPLClientImpl" init-method="init">
+		<constructor-arg index="0" ref="xmlSoccerService"/>
+		<constructor-arg index="1" ref="avroConverter"/>
+	</bean>
+	<bean name="avroFileWriter" class="com.prabuddha.spl.util.AvroFileWriter">
+		<constructor-arg index="0" value="/home/kyuts/git_workspace/spark-avro-soccer/avro"/>
+	</bean>
+	<bean name="xmlSoccerService" class="com.github.pabloo99.xmlsoccer.client.XmlSoccerServiceImpl"/>
+	<bean name="avroConverter" class="com.prabuddha.spl.avro.converter.AvroConverter"/>		
+
+</beans>

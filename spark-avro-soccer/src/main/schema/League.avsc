@@ -1,0 +1,14 @@
+{"namespace": "com.prabuddha.spl.model.avro.autogen",
+ "type": "record",
+ "name": "LeagueAVRO",
+ "fields": [
+     {"name": "id", "type": "int"},
+     {"name": "name",  "type": ["string", "null"]},
+     {"name": "country",  "type": ["string", "null"]},
+     {"name": "historicalData",  "type": ["string", "null"]},
+     {"name": "fixtures",  "type": ["string", "null"]},
+     {"name": "livescore",  "type": ["string", "null"]},
+     {"name": "numberOfMatches",  "type": ["int", "null"]},
+     {"name": "latestMatch",  "type": ["string", "null"]}
+ ]
+}
