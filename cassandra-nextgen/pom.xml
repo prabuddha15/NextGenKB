@@ -3,5 +3,8 @@
   <groupId>com.prabuddha.poc.cassandra</groupId>
   <artifactId>cassandra-nextgen</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <modules>
+        <module>cassandra-spring</module>
+    </modules>
+    <packaging>pom</packaging>
 </project>
