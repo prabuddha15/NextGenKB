@@ -1,4 +1,4 @@
-package com.prabuddha.poc.cassandra.com.prabuddha.poc.cassandra.client;
+package com.prabuddha.poc.cassandra.client;
 
 import com.datastax.driver.core.*;
 import com.datastax.driver.core.policies.LatencyAwarePolicy;
