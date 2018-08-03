@@ -1,0 +1,4 @@
+1. While connecting to cassandra server, make sure driver version is compatible with Cassandra version.
+Otherwise you will get below error.
+
+com.datastax.driver.core.exceptions.NoHostAvailableException: All host(s) tried for query failed (tried: /127.0.0.1:9042 (com.datastax.driver.core.exceptions.TransportException: [/127.0.0.1:9042] Channel has been closed))
