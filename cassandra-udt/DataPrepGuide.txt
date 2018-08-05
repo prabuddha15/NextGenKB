@@ -1,0 +1,33 @@
+1) Create a KEYSPACE, If not existed:
+	
+	CREATE KEYSPACE mykeyspace WITH replication = 
+	{'class': 'SimpleStrategy', 'replication_factor': '1'};
+	
+2) Create customer User Data Type :
+	
+	// Here customer is UDT name
+	CREATE TYPE mykeyspace.customer (
+    	id text,
+    	name text,
+    	coupon_code text,
+    	address text
+	);	
+	
+3) Create table orders that is having customer UDT as one of the column:
+
+	// Here orders is a table
+	CREATE TABLE mykeyspace.orders(
+    	order_id text, 
+    	item_id text, 
+    	no_of_items int, 
+    	customer frozen<customer>, // customer is a UDT
+    	PRIMARY KEY (order_id, item_id)
+	);
+	
+4) insert some data into orders table :
+
+	INSERT INTO orders(order_id, item_id , no_of_items, customer ) values 
+	('order_101', 'item_12', 2,{id: 'CUST_ID_1', name: 'Peater', coupon_code: 
+	'Coupon_Code_10245', address:'2 Lane, 13th Street, Oakland, CA'});
+	
+//END
