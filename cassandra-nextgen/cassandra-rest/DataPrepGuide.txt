@@ -1,0 +1,36 @@
+1) Create a KEYSPACE, If not existed:
+	
+	CREATE KEYSPACE mykeyspace WITH replication = 
+	{'class': 'SimpleStrategy', 'replication_factor': '1'};
+	
+2) Create employer User Data Type :
+	
+	CREATE TYPE mykeyspace.employer (
+        	id uuid,
+        	name text,
+        	address text,
+        	est_date date
+    	);
+	
+3) Create table orders that is having customer UDT as one of the column:
+
+	CREATE TABLE mykeyspace.employee(
+        	employee_id uuid,
+        	name text,
+        	age int,
+        	skill_exp map<text,int>,
+        	prev_employment_list list<FROZEN <employer>>, // customer is a UDT
+        	PRIMARY KEY (employee_id, name)
+    );
+	
+4) insert some data into orders table :
+
+	INSERT INTO employee(employee_id, name , age, skill_exp, prev_employment_list ) values
+	(uuid(), 'Prabuddha Basu', 28, { 'java' : 7, 'unix': 6},[{id: uuid(), name: 'Nokia', address:'2 Lane, 13th Street, Oakland, CA',est_date:'1998-9-24'},{id: uuid(), name: 'ALU', address:'21 Lane, 12th Street, Kinnelon, NJ',est_date:'1991-1-14'}]);
+	
+    ****  select * from employee where employee_id=e7b05bc2-a06f-44b1-8c6d-ca4880f91d68 and name='Prabuddha Basu';
+
+
+//END
+
+5)  Swagger URL :: http://localhost:8080/swagger-ui.html
