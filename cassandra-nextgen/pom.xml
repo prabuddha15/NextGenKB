@@ -5,6 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>cassandra-spring</module>
+        <module>cassandra-rest</module>
     </modules>
     <packaging>pom</packaging>
 </project>
