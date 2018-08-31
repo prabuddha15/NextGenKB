@@ -8,17 +8,19 @@ public class FootballerBO implements Serializable{
 	
 	private String firstName;
 	private String lastName;
-	private final String position = "FORWARD";
+    private String position;
 	private int age;
 	private int matchPlayed;
 	private int goalScored;
 	private double wage;
 
-	public FootballerBO(String firstName, String lastName, int age,
+
+    public FootballerBO(String firstName, String lastName, String position, int age,
 			int matchPlayed, int goalScored, double wage) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
+        this.position = position;
 		this.age = age;
 		this.matchPlayed = matchPlayed;
 		this.goalScored = goalScored;
@@ -40,6 +42,10 @@ public class FootballerBO implements Serializable{
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
 
 	public int getAge() {
 		return age;
