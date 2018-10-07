@@ -12,6 +12,7 @@
         <module>java-spring</module>
         <module>thread-scheduler</module>
         <module>design-pattern</module>
+        <module>java8-misc</module>
     </modules>
 
     <name>java-nextgen</name>
