@@ -15,6 +15,7 @@
         <module>java8-misc</module>
         <module>java-spring-boot</module>
         <module>spring-hibernate</module>
+        <module>data-structures</module>
     </modules>
 
     <name>java-nextgen</name>
